@@ -1,0 +1,37 @@
+{ 
+        "questions": [{ 
+                "title": "Name", 
+                "type": "Text" 
+            }, 
+            
+            { 
+                "title": "Date", 
+                "type": "Text" 
+            },
+        { 
+                        "title": "Category", 
+                        "type": "Text" 
+                    },
+            { 
+                            "title": "Description", 
+                            "type": "Text" 
+                        },
+                { 
+                                "title": "Amount", 
+                                "type": "Numeric" 
+                            },
+                    { 
+                                    "title": "Image", 
+                                    "type": "Image" 
+                                },
+                        { 
+                                        "title": "Location", 
+                                        "type": "Text" 
+                                    }
+             
+        ], 
+        "title": "Sales Transaction", 
+        "visibility": "All", 
+        "isAnonymous": false, 
+        "isResponseAppended": false 
+}

@@ -1,0 +1,231 @@
+<html> 
+     
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Expense Claim Form</title>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <!-- KASClient JavaScript File --> 
+        <script type="text/javascript" src="KASClient.js"></script> 
+        <script type="text/javascript" src="sales.js"></script>
+    </head> 
+     
+    <!-- <body onload="onResponsePageLoad()"> 
+        <br/> <br/> 
+        <div> 
+            <p id="title"></p> 
+        </div> 
+        <div> 
+            <br/> <br/>
+            <div> 
+                <p>Vendor's Name</p> 
+                <input type="text" name="description" id="description" placeholder="Please enter vendors name."> 
+            </div>
+        </div> 
+        <br> <br>
+        <div>
+            <img id='image-control' src="placeholder.png" style="width:100px; height: 100px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image>
+        </div>
+        <br><br>
+        <div class="footer"> 
+            <input type="submit" name="submit" value="Submit" onclick="submitData()"> 
+        </div>
+    </body>  -->
+     
+    <body onload="onResponsePageLoad()">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg col-md col-sm col-xs"></div>
+                <div class="col-lg col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!--Header-->
+                            <div class="text-center">
+                                <p id="logo"></p>
+                                <h3 class="dark-grey-text mb-5 head"><strong>Expense Claim Form</strong></h3>
+                            </div>
+    
+                            <!--Body-->                        
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        1.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Name:</p>
+                                    </div>
+                                </div>
+                                <input type="text" placeholder="Name" id="description" class="form-control input">
+                                <hr>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        2.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Date:</p>
+                                    </div>
+                                </div>
+                                <input type="date" id="dateTextBox" class="form-control input">
+                                <hr>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        3.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Category:</p>
+                                    </div>
+                                </div>
+                                <div class="dropdown input" id="input">
+                                    <div class="select">
+                                        <span>Select Category</span>
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                    <input type="hidden" name="category" id="dropdownTextbox">
+                                    <ul class="dropdown-menu">
+                                        <li id="Breakfast" value="Breakfast">Breakfast</li>
+                                        <hr id="options">
+                                        <li id="Lunch" value="Lunch">Lunch</li>
+                                        <hr id="options">
+                                        <li id="Dinner" value="Dinner">Dinner</li>
+                                        <hr id="options">
+                                        <li id="Flight" value="Flight">Flight</li>
+                                        <hr id="options">
+                                        <li id="Taxi" value="Taxi">Taxi</li>
+                                        <hr id="options">
+                                        <li id="Hotel" value="Hotel">Hotel</li>
+                                        <hr id="options">
+                                        <li id="BusinessCenter" value="Business Center">Business Center</li>
+                                        <hr id="options">
+                                        <li id="OtherDescription" value="OtherDescription">Other (Description must be filled if this category is selected)</li>
+                                        <hr id="options">
+                                        <li id="OtherDescription" value="OtherDescription">Multiple(Items must be listed in Description if this category is
+                                            selected)</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        4.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Description (must be filled if category <br/> selected is Other or
+                                            multiple):</p>
+                                    </div>
+                                </div>
+                                <textarea class="form-control rounded-0 input" id="OtherDescriptionSet" rows="3"></textarea>
+    
+                                <hr>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        5.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Amount:</p>
+                                    </div>
+                                </div>
+                                <input type="number" placeholder="Amount Input" id="amountTextBox" class="form-control input">
+                                <hr>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        6.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Receipt(s)</p>
+                                    </div>
+                                </div>                            
+                                <div class="input-group">
+                                    <span>
+                                        <label class="input attach">Add Attachments</label>
+                                        <img id='image-control' src="placeholder.png" style="width:40px; height: 40px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image>
+                                        <!-- <img id='image-control1' src="placeholder.png" style="width:40px; height: 40px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image>
+                                        <img id='image-control2' src="placeholder.png" style="width:40px; height: 40px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image>
+                                        <img id='image-control3' src="placeholder.png" style="width:40px; height: 40px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image>
+                                    </span> -->
+                                    <!-- <img id='image-control' src="placeholder.png" style="width:50px; height: 50px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image> -->
+                                    <!-- <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="input"
+                                            aria-describedby="inputGroupFileAddon04">
+                                        <label class="custom-file-label" id="input" ><span>
+                                                <h6 id="attach">Add Attachments</h6>
+                                                <i class="fas fa-plus-circle fa-lg"></i>
+                                                <i class="fas fa-plus-circle fa-lg"></i>
+                                                <i class="fas fa-plus-circle fa-lg"></i>
+                                                <i class="fas fa-plus-circle fa-lg"></i>
+                                            </span></label>
+                                            <img id='image-control' src="placeholder.png" style="width:100px; height: 100px; object-fit: cover; border-radius: 5px;" onclick="onImageClicked()"></image>
+       
+                                    </div> -->
+                                </div>
+                                <hr>
+                            </div>
+                            <!-- <div>
+                                <div class="row">
+                                    <div class="col-xs-2 order">
+                                        7.
+                                    </div>
+                                    <div class="col-xs-10 label">
+                                        <p id="name">Responder Location</p>
+                                    </div>
+                                </div>
+                                <input type="search" placeholder="Location" id="input" class="form-control input">
+                                <hr>
+                            </div> -->
+                            <div class="text-center">
+                                <button type="button" class="btn button" onclick="submitData()">Submit</button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col-md col-sm col-xs"></div>
+            </div>
+        </div>
+    
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="bootstrap.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="bootstrap.bundle.js"></script>
+        <script>
+            /*Dropdown Menu*/
+            $('.dropdown').click(function () {
+                $(this).attr('tabindex', 1).focus();
+                $(this).toggleClass('active');
+                $(this).find('.dropdown-menu').slideToggle(300);
+            });
+            $('.dropdown').focusout(function () {
+                $(this).removeClass('active');
+                $(this).find('.dropdown-menu').slideUp(300);
+            });
+            $('.dropdown .dropdown-menu li').click(function () {
+                $(this).parents('.dropdown').find('span').text($(this).text());
+                $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+            });
+            /*End Dropdown Menu*/
+        </script>
+    </body>
+
+
+
+
+
+
+
+    </html> 

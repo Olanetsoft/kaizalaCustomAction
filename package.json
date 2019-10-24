@@ -1,0 +1,34 @@
+{ 
+        "id": "com.kaizala.sales", 
+        "schemaVersion": 1, 
+        "version": 15,
+        "minorVersion": 14,
+        "providerName": "SalesTest", 
+        "displayName": "Submit Sales", 
+        "description": "Custom action to collect feedback on Sales", 
+        "icon": "salePic.png", 
+        "appModel": "appModel.json",
+        "actionScope":"Group", 
+        "views": { 
+         "CreationView": { 
+                "labelHeader": "Sales Requested", 
+                "sourceLocation": "salesView.html",
+                "showNativeToolbar": true,
+                "backDialogTitle": "Confirmation",
+                "backDialogDescription": "Are you sure you want to discard?" 
+                },
+         
+        "ChatCanvasCardView": { 
+                    "labelResponded": "You have submitted sale Request.",
+                    "labelRespondToForm": "VIEW SALES SUBMITTED",
+                    "isResponseEditable": false,
+                    "showLikes" : false,
+                    "showComments": false
+                },
+        "ResponseResultsView": { 
+            "labelPageHeader": "Sales summary",
+            "sourceLocation": "financeView.html",
+            "showNativeToolbar": true 		
+        } 
+        }
+}
